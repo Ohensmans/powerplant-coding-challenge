@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Olivier\\.nuget\\packages\\": {}
+    "C:\\Users\\olivi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projets GitHub\\powerplant-coding-challenge\\PowerPlantChallenge\\PowerPlantChallenge.csproj",
+      "projectUniqueName": "C:\\Projets Git\\powerplant-coding-challenge\\PowerPlantChallenge\\PowerPlantChallenge.csproj",
       "projectName": "PowerPlantChallenge",
-      "projectPath": "F:\\Projets GitHub\\powerplant-coding-challenge\\PowerPlantChallenge\\PowerPlantChallenge.csproj",
-      "packagesPath": "C:\\Users\\Olivier\\.nuget\\packages\\",
-      "outputPath": "F:\\Projets GitHub\\powerplant-coding-challenge\\PowerPlantChallenge\\obj\\",
+      "projectPath": "C:\\Projets Git\\powerplant-coding-challenge\\PowerPlantChallenge\\PowerPlantChallenge.csproj",
+      "packagesPath": "C:\\Users\\olivi\\.nuget\\packages\\",
+      "outputPath": "C:\\Projets Git\\powerplant-coding-challenge\\PowerPlantChallenge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Olivier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\olivi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

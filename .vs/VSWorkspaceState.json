@@ -3,8 +3,8 @@
     "",
     "\\example_payloads",
     "\\PowerPlantChallenge",
+    "\\PowerPlantChallenge\\Controllers",
     "\\PowerPlantChallenge\\Models"
   ],
-  "SelectedNode": "\\example_payloads\\payload1.json",
   "PreviewInSolutionExplorer": false
 }
