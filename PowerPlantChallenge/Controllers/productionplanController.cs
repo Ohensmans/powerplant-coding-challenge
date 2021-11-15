@@ -17,8 +17,10 @@ namespace PowerPlantChallenge.Controllers
 
             //set maxPrice to the max possible price
             float maxPrice = lPlants.Last().marginalPrice * payload.load;
+            //find the optimum production
             List<float> optimum = optimalProduction(lPlants, new List<float>(), new List<float>(), payload.load, maxPrice, 0);
 
+            //build the result
             List<PowerProducedModel> lresult = new List<PowerProducedModel>();
 
             for(int i = 0; i < lPlants.Count; i++)
@@ -56,7 +58,7 @@ namespace PowerPlantChallenge.Controllers
             {
                 if (plant.type.Equals("gasfired"))
                 {
-                    if (priceGas > 0)
+                    if (priceGas >= 0)
                     {
                         plant.marginalPrice = (float)priceGas / (float)plant.efficiency;
                         plant.pTmax = plant.pmax;
@@ -65,7 +67,7 @@ namespace PowerPlantChallenge.Controllers
                 }
                 else if (plant.type.Equals("turbojet"))
                 {
-                    if (priceKerozine > 0)
+                    if (priceKerozine >= 0)
                     {
                         plant.marginalPrice = (float)priceKerozine / (float)plant.efficiency;
                         plant.pTmax = plant.pmax;
@@ -74,7 +76,7 @@ namespace PowerPlantChallenge.Controllers
                 }
                 else if (plant.type.Equals("windturbine"))
                 {
-                    if (wind > 0)
+                    if (wind >= 0)
                     {
                         plant.marginalPrice = 0;
                         plant.pTmax = wind * (float)plant.pmax/100;
@@ -114,12 +116,18 @@ namespace PowerPlantChallenge.Controllers
             }
         }
 
-
+        //the global idea is that each plant is either taken (pvalue) in the optimum or not (0)
+        //so we try to take everything by the given order (sorted by marginalPrice and then by pmin and the by p max at time T)
+        //we save the new optimum everytime we find one (with lProduction for the pvalues and minProductionPrice for the production cost)
+        //and then try again but with the last non 0 value initialize at 0
+        //lProduction is only a list of float (and not a list including the name of the plants for ex.) to reduce the data used by this regressive function
+        //powerneed is saved in order to minimize a little bit the calculation time (we could just made a loop with a sum on lProduction)
+        //same for currentPrice
         private List<float> optimalProduction(List<PowerPlantModel> lPlants, List<float> lProduction, List<float> lProductionOptimum, float powerneed, float minProductionPrice, float currentPrice)
         {
             //if it's the last plant then find the last index of lProduction[i] != 0 and change it to 0
             //also change powerneed and currentPrice to match the new test
-            if (lProduction.Count - 1 == lPlants.Count)
+            if (lProduction.Count == lPlants.Count)
             {
                 int i = lProduction.FindLastIndex(p => p != 0);
 
@@ -128,6 +136,8 @@ namespace PowerPlantChallenge.Controllers
                 {
                     return lProductionOptimum;
                 }
+
+                //switch the last non 0 value from lProduction with a 0 and try to find another optimum from there
                 else
                 {
                     powerneed += lProduction[i];
@@ -164,7 +174,7 @@ namespace PowerPlantChallenge.Controllers
             //if powerneed is between pmin and pmax of the plant and that the solution found is a new optimum
             else if(powerneed <= supplyMax && powerneed>=supplyMin && (currentPlant.marginalPrice * powerneed)+currentPrice < minProductionPrice)
             {
-                lProductionOptimum = lProduction;
+                lProductionOptimum = lProduction.ToList();
                 lProductionOptimum.Add(powerneed);
                 minProductionPrice = currentPrice + (currentPlant.marginalPrice * powerneed);
             }
@@ -174,7 +184,7 @@ namespace PowerPlantChallenge.Controllers
             else if(powerneed < supplyMin)
             {
                 float minusPower = supplyMin - powerneed;
-                List<float> lProductionTest = lProduction;
+                List<float> lProductionTest = lProduction.ToList();
                 float currentPriceTest = currentPrice;
                 int i = lProduction.Count -1;
 
@@ -199,7 +209,7 @@ namespace PowerPlantChallenge.Controllers
                         //minusPower is more than the min production of the i plant but less than the actual production
                         //a plant cannot produce less than his pmin (or 0)
                         //so put at min that plant and go check the other below the list
-                        //to remember the list is sorted by ascending marging cost
+                        //remember that the list is sorted by ascending marging cost
                         else                        
                         {
                             minusPower -= (lProductionTest[i] - getSupplyMin(lPlants[i]));
@@ -217,7 +227,7 @@ namespace PowerPlantChallenge.Controllers
                     if (currentPriceTest < minProductionPrice)
                     {
                         lProductionTest.Add(powerneed);
-                        lProductionOptimum = lProductionTest;
+                        lProductionOptimum = lProductionTest.ToList();
                         minProductionPrice = currentPriceTest;
                     }
                 }
