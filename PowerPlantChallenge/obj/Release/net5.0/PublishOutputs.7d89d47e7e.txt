@@ -1,0 +1,11 @@
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\PowerPlantChallenge.exe
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\appsettings.json
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\PowerPlantChallenge.dll
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\PowerPlantChallenge.deps.json
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\PowerPlantChallenge.runtimeconfig.json
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\PowerPlantChallenge.pdb
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

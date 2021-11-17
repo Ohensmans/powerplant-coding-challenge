@@ -6,6 +6,8 @@ using System.Collections.Generic;
 /// </summary>
 public class PowerPlantModel
 {
+    private const double C02RATIO = 0.3;
+
 	public string name { get; set; }
 	public string type { get; set; }
 	public float efficiency { get; set; }
@@ -23,15 +25,16 @@ public class PowerPlantModel
         float priceGas = -1;
         float priceKerozine = -1;
         float wind = -1;
+        float priceC02 = -1;
 
         if (this.type.Equals("gasfired"))
         {
             fuels.TryGetValue("gas(euro/MWh)", out priceGas);
-            if (priceGas >= 0)
+            fuels.TryGetValue("co2(euro/ton)", out priceC02);
+            if (priceGas >= 0 && priceC02>=0)
             {
-                this.marginalPrice = (float)priceGas / (float)this.efficiency;
+                this.marginalPrice = ((float)priceGas / (float)this.efficiency) + ((float)C02RATIO*priceC02);
                 this.pTmax = this.pmax;
-                
             }
         }
         else if (this.type.Equals("turbojet"))

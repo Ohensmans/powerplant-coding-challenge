@@ -40,7 +40,6 @@ F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\bin\Debug\net5
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.csprojAssemblyReference.cache
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.GeneratedMSBuildEditorConfig.editorconfig
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.AssemblyInfoInputs.cache
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.AssemblyInfo.cs
@@ -56,3 +55,4 @@ F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\ref\PowerPlantChallenge.dll
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.pdb
 F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.genruntimeconfig.cache
+F:\Projets GitHub\powerplant-coding-challenge\PowerPlantChallenge\obj\Debug\net5.0\PowerPlantChallenge.csproj.AssemblyReference.cache
